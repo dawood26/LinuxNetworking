@@ -60,6 +60,7 @@ ip netns add ns6
 ip link add name vth6 type veth peer name vth_6
 ip link set vth_6 netns ns6
 ip netns exec ns6 ip addr add 192.168.1.6/24 dev vth_6
+ip netns exec ns6 ip route add 192.168.124.0/24 via 192.168.1.50
 ip link set vth6 master br0
 ip link set vth6 up
 ip netns exec ns6 ip link set vth_6 up
@@ -69,6 +70,7 @@ ip netns add ns7
 ip link add name vth7 type veth peer name vth_7
 ip link set vth_7 netns ns7
 ip netns exec ns7 ip addr add 192.168.1.7/24 dev vth_7
+ip netns exec ns7 ip route add 192.168.124.0/24 via 192.168.1.50
 ip link set vth7 master br0
 ip link set vth7 up
 ip netns exec ns7 ip link set vth_7 up
@@ -78,6 +80,7 @@ ip netns add ns8
 ip link add name vth8 type veth peer name vth_8
 ip link set vth_8 netns ns8
 ip netns exec ns8 ip addr add 192.168.1.8/24 dev vth_8
+ip netns exec ns8 ip route add 192.168.124.0/24 via 192.168.1.50
 ip link set vth8 master br0
 ip link set vth8 up
 ip netns exec ns8 ip link set vth_8 up
@@ -87,6 +90,7 @@ ip netns add ns9
 ip link add name vth9 type veth peer name vth_9
 ip link set vth_9 netns ns9
 ip netns exec ns9 ip addr add 192.168.1.9/24 dev vth_9
+ip netns exec ns9 ip route add 192.168.124.0/24 via 192.168.1.50
 ip link set vth9 master br0
 ip link set vth9 up
 ip netns exec ns9 ip link set vth_9 up
@@ -97,6 +101,7 @@ ip netns add ns10
 ip link add name vth10 type veth peer name vth_10
 ip link set vth_10 netns ns10
 ip netns exec ns10 ip addr add 192.168.1.10/24 dev vth_10
+ip netns exec ns10 ip route add 192.168.124.0/24 via 192.168.1.50
 ip link set vth10 master br0
 ip link set vth10 up
 ip netns exec ns10 ip link set vth_10 up
